@@ -8,6 +8,7 @@
     <title>MagisNetwork – Secure. Connect. Protect.</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -28,7 +29,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#features">Features</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <button class="contact-btn">Get Started</button>
@@ -36,29 +37,105 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with 3D Background -->
     <section class="hero" id="home">
-        <div class="container">
+        <div id="hero-canvas-container" class="hero-canvas"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content-wrapper">
             <div class="hero-content">
+                <div class="hero-badge">🚀 Advanced Technology Solutions</div>
                 <h1>Secure. Connect. Protect.</h1>
                 <p>Your Trusted Technology Partner for Internet, CCTV, Cybersecurity & IT Solutions</p>
                 <div class="hero-buttons">
                     <button class="btn btn-primary">Explore Services</button>
-                    <button class="btn btn-secondary">Contact Us</button>
+                    <button class="btn btn-secondary">Request Demo</button>
                 </div>
             </div>
             <div class="hero-stats">
-                <div class="stat">
-                    <h3>100+</h3>
+                <div class="stat" data-target="100">
+                    <h3><span class="stat-number">0</span>+</h3>
                     <p>Clients Served</p>
                 </div>
-                <div class="stat">
-                    <h3>24/7</h3>
+                <div class="stat" data-target="24">
+                    <h3><span class="stat-number">0</span>/7</h3>
                     <p>Support Available</p>
                 </div>
-                <div class="stat">
-                    <h3>99.9%</h3>
+                <div class="stat" data-target="99.9">
+                    <h3><span class="stat-number">0</span>%</h3>
                     <p>Uptime Guarantee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Solutions Preview Section -->
+    <section class="solutions-preview" id="solutions">
+        <div class="container">
+            <h2>Our Core Solutions</h2>
+            <p class="section-subtitle">Industry-leading technology for every need</p>
+            <div class="solutions-grid">
+                <div class="solution-card network-card">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 100 100" fill="none">
+                            <circle cx="50" cy="50" r="40" stroke="#0066cc" stroke-width="2"/>
+                            <circle cx="50" cy="20" r="8" fill="#00d4ff"/>
+                            <circle cx="80" cy="50" r="8" fill="#00d4ff"/>
+                            <circle cx="50" cy="80" r="8" fill="#00d4ff"/>
+                            <circle cx="20" cy="50" r="8" fill="#00d4ff"/>
+                            <line x1="50" y1="28" x2="50" y2="42" stroke="#0066cc" stroke-width="1.5"/>
+                            <line x1="72" y1="58" x2="58" y2="58" stroke="#0066cc" stroke-width="1.5"/>
+                            <line x1="50" y1="72" x2="50" y2="58" stroke="#0066cc" stroke-width="1.5"/>
+                            <line x1="28" y1="50" x2="42" y2="50" stroke="#0066cc" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <h3>Network Solutions</h3>
+                    <p>Broadband setup, Wi-Fi installation, LAN/WAN deployment</p>
+                    <ul class="solution-points">
+                        <li>✓ High-speed connectivity</li>
+                        <li>✓ Reliable infrastructure</li>
+                        <li>✓ 24/7 monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="solution-card cctv-card">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 100 100" fill="none">
+                            <rect x="15" y="25" width="70" height="50" stroke="#00d4ff" stroke-width="2" rx="3"/>
+                            <circle cx="50" cy="50" r="15" stroke="#00d4ff" stroke-width="2" fill="none"/>
+                            <circle cx="50" cy="50" r="8" fill="#00d4ff" opacity="0.5"/>
+                            <line x1="50" y1="42" x2="50" y2="35" stroke="#0066cc" stroke-width="2"/>
+                            <path d="M 45 65 L 50 72 L 55 65" stroke="#0066cc" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>CCTV Solutions</h3>
+                    <p>Professional installation, DVR/NVR configuration, remote monitoring</p>
+                    <ul class="solution-points">
+                        <li>✓ 4K resolution</li>
+                        <li>✓ Night vision</li>
+                        <li>✓ Cloud storage</li>
+                    </ul>
+                </div>
+
+                <div class="solution-card cyber-card">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 100 100" fill="none">
+                            <rect x="20" y="20" width="60" height="60" stroke="#0066cc" stroke-width="2" rx="4"/>
+                            <path d="M 35 50 L 40 55 L 50 45" stroke="#00d4ff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="65" cy="35" r="4" fill="#00d4ff"/>
+                            <circle cx="65" cy="50" r="4" fill="#00d4ff"/>
+                            <circle cx="65" cy="65" r="4" fill="#00d4ff"/>
+                            <line x1="60" y1="35" x2="52" y2="35" stroke="#0066cc" stroke-width="1"/>
+                            <line x1="60" y1="50" x2="52" y2="50" stroke="#0066cc" stroke-width="1"/>
+                            <line x1="60" y1="65" x2="52" y2="65" stroke="#0066cc" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>Security audits, vulnerability assessments, firewall configuration</p>
+                    <ul class="solution-points">
+                        <li>✓ Threat detection</li>
+                        <li>✓ Penetration testing</li>
+                        <li>✓ Compliance ready</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -67,44 +144,153 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <h2>Our Services</h2>
-            <p class="section-subtitle">Comprehensive technology solutions tailored to your needs</p>
+            <h2>Comprehensive Services</h2>
+            <p class="section-subtitle">End-to-end technology solutions tailored to your business</p>
             
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🌐</div>
                     <h3>Internet & Networking</h3>
                     <p>Broadband setup, Wi-Fi installation, network expansion, bandwidth optimization, LAN/WAN deployment, and VPN setup for seamless connectivity.</p>
+                    <a href="#" class="service-link">Learn More →</a>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">🔒</div>
                     <h3>Cybersecurity Solutions</h3>
                     <p>Security audits, vulnerability assessments, firewall configuration, endpoint protection, and security awareness training to protect your digital assets.</p>
+                    <a href="#" class="service-link">Learn More →</a>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">📹</div>
                     <h3>CCTV & Surveillance</h3>
                     <p>Professional camera installation, DVR/NVR configuration, remote monitoring setup, and surveillance system upgrades for homes and businesses.</p>
+                    <a href="#" class="service-link">Learn More →</a>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">🛠️</div>
                     <h3>Network Troubleshooting</h3>
                     <p>Diagnose and resolve connectivity problems, slow performance, wireless coverage issues, and infrastructure-related challenges quickly.</p>
+                    <a href="#" class="service-link">Learn More →</a>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">💾</div>
                     <h3>Server Management</h3>
                     <p>Server deployment, configuration, maintenance, monitoring, backup planning, and infrastructure support for business continuity.</p>
+                    <a href="#" class="service-link">Learn More →</a>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">📊</div>
                     <h3>IT Consulting</h3>
                     <p>Expert guidance on network upgrades, infrastructure expansion, security implementation, and technology modernization strategies.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terminal Display Section -->
+    <section class="terminal-showcase" id="features">
+        <div class="container">
+            <h2>Real-Time Monitoring & Control</h2>
+            <p class="section-subtitle">Advanced dashboard for complete network oversight</p>
+            
+            <div class="terminal-grid">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="terminal-title">Network Status Monitor</span>
+                        <div class="terminal-buttons">
+                            <span class="btn-min"></span>
+                            <span class="btn-max"></span>
+                            <span class="btn-close"></span>
+                        </div>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="terminal-line"><span class="terminal-prompt">$</span> <span class="terminal-text">show network interfaces</span></div>
+                        <div class="terminal-line"><span class="terminal-output">eth0: 192.168.1.100 | Status: UP | Speed: 1Gbps</span></div>
+                        <div class="terminal-line"><span class="terminal-output">eth1: 10.0.0.50 | Status: UP | Speed: 100Mbps</span></div>
+                        <div class="terminal-line"><span class="terminal-prompt">$</span> <span class="terminal-text">check firewall status</span></div>
+                        <div class="terminal-line"><span class="terminal-success">✓ Firewall: ACTIVE</span></div>
+                        <div class="terminal-line"><span class="terminal-success">✓ Threats blocked: 247</span></div>
+                        <div class="terminal-line"><span class="terminal-prompt">$</span> <span class="terminal-text">monitor systems</span></div>
+                        <div class="terminal-line"><span class="terminal-success">✓ All systems operational</span></div>
+                    </div>
+                </div>
+
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="terminal-title">Security Dashboard</span>
+                        <div class="terminal-buttons">
+                            <span class="btn-min"></span>
+                            <span class="btn-max"></span>
+                            <span class="btn-close"></span>
+                        </div>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="security-stats">
+                            <div class="stat-row">
+                                <span class="stat-label">System Security Level:</span>
+                                <span class="stat-value critical">CRITICAL</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Vulnerabilities Found:</span>
+                                <span class="stat-value warning">3 Medium</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Last Scan:</span>
+                                <span class="stat-value">2 hours ago</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Updates Available:</span>
+                                <span class="stat-value success">✓ All current</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Data Encryption:</span>
+                                <span class="stat-value success">✓ AES-256</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="terminal-title">CCTV Camera Feed</span>
+                        <div class="terminal-buttons">
+                            <span class="btn-min"></span>
+                            <span class="btn-max"></span>
+                            <span class="btn-close"></span>
+                        </div>
+                    </div>
+                    <div class="terminal-content camera-feed">
+                        <div class="camera-status">
+                            <div class="camera-item">
+                                <span class="camera-indicator active"></span>
+                                <span>Front Gate</span>
+                            </div>
+                            <div class="camera-item">
+                                <span class="camera-indicator active"></span>
+                                <span>Main Entrance</span>
+                            </div>
+                            <div class="camera-item">
+                                <span class="camera-indicator active"></span>
+                                <span>Parking Area</span>
+                            </div>
+                            <div class="camera-item">
+                                <span class="camera-indicator active"></span>
+                                <span>Back Door</span>
+                            </div>
+                        </div>
+                        <div class="terminal-line" style="margin-top: 15px;">
+                            <span class="terminal-success">✓ All cameras streaming</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-output">Resolution: 4K | FPS: 30 | Encryption: ON</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -115,71 +301,82 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About MagisNetwork</h2>
+                    <h2>Why MagisNetwork?</h2>
                     <p>We are a professional technology solutions company dedicated to delivering reliable, secure, and high-performance networking services. In today's digital world, a stable and secure network is essential for productivity, communication, and business growth.</p>
-                    <p>Our mission is to provide innovative and cost-effective technology solutions that help our customers stay connected, protected, and productive. Whether you need network installation, cybersecurity protection, CCTV surveillance, or professional IT support, our experienced team is committed to delivering dependable solutions.</p>
-                    <ul class="about-list">
-                        <li>✓ Experienced and knowledgeable technical team</li>
-                        <li>✓ Fast and responsive customer support</li>
-                        <li>✓ Affordable and scalable technology solutions</li>
-                        <li>✓ Strong focus on cybersecurity and network security</li>
-                    </ul>
+                    <p>Our mission is to provide innovative and cost-effective technology solutions that help our customers stay connected, protected, and productive.</p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <h4>🎯 Industry Expertise</h4>
+                            <p>15+ years of experience in IT infrastructure and cybersecurity</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>🔐 Security First</h4>
+                            <p>Enterprise-grade security protocols and compliance certifications</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>⚡ Fast Response</h4>
+                            <p>30-minute emergency response time for critical issues</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>🌍 Global Support</h4>
+                            <p>24/7 multilingual support team across all time zones</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-image">
-                    <div class="placeholder-image">
-                        <svg viewBox="0 0 400 300" fill="none">
-                            <rect width="400" height="300" fill="#f0f4f8"/>
-                            <rect x="50" y="50" width="300" height="200" stroke="#0066cc" stroke-width="2" rx="4"/>
-                            <circle cx="200" cy="150" r="60" stroke="#00d4ff" stroke-width="2" fill="none"/>
-                            <path d="M 200 90 L 260 150 L 200 210 L 140 150 Z" stroke="#0066cc" stroke-width="2" fill="none"/>
-                        </svg>
-                    </div>
+                    <div id="about-canvas-container" class="about-canvas"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="why-us" id="why-us">
+    <section class="why-us">
         <div class="container">
-            <h2>Why Choose MagisNetwork?</h2>
-            <p class="section-subtitle">We deliver excellence in every aspect of our service</p>
+            <h2>Key Differentiators</h2>
+            <p class="section-subtitle">What sets MagisNetwork apart</p>
             
             <div class="why-us-grid">
                 <div class="why-card">
+                    <div class="why-icon">👥</div>
                     <div class="why-number">01</div>
                     <h3>Expert Team</h3>
-                    <p>Our experienced professionals bring technical expertise and industry knowledge to every project.</p>
+                    <p>Certified professionals with industry credentials and proven track record in complex network deployments.</p>
                 </div>
 
                 <div class="why-card">
+                    <div class="why-icon">⏰</div>
                     <div class="why-number">02</div>
                     <h3>24/7 Support</h3>
-                    <p>Round-the-clock customer support ensures your issues are resolved quickly and efficiently.</p>
+                    <p>Round-the-clock monitoring and support ensures your systems are always protected and operational.</p>
                 </div>
 
                 <div class="why-card">
+                    <div class="why-icon">💰</div>
                     <div class="why-number">03</div>
                     <h3>Affordable Solutions</h3>
-                    <p>Cost-effective and scalable technology solutions that fit your budget and business needs.</p>
+                    <p>Cost-effective and scalable technology solutions that maximize ROI for businesses of all sizes.</p>
                 </div>
 
                 <div class="why-card">
+                    <div class="why-icon">🛡️</div>
                     <div class="why-number">04</div>
                     <h3>Security First</h3>
-                    <p>Strong focus on cybersecurity and network security to protect your digital assets.</p>
+                    <p>Multi-layered security approach with advanced threat detection and prevention mechanisms.</p>
                 </div>
 
                 <div class="why-card">
+                    <div class="why-icon">✅</div>
                     <div class="why-number">05</div>
                     <h3>Reliable Services</h3>
-                    <p>Professional CCTV, internet, and IT support you can depend on for consistent performance.</p>
+                    <p>99.9% uptime SLA with redundant systems and automatic failover capabilities.</p>
                 </div>
 
                 <div class="why-card">
+                    <div class="why-icon">🤝</div>
                     <div class="why-number">06</div>
-                    <h3>Long-term Partnership</h3>
-                    <p>We're committed to being your trusted technology partner for sustainable growth.</p>
+                    <h3>Partnership Approach</h3>
+                    <p>We're invested in your success as a long-term strategic technology partner.</p>
                 </div>
             </div>
         </div>
@@ -278,6 +475,7 @@
         </div>
     </footer>
 
+    <script src="js/three-bg.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
