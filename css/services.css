@@ -1,0 +1,442 @@
+/* ==================== Service Modal Styles ==================== */
+.service-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.service-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: linear-gradient(135deg, rgba(26, 31, 58, 0.98), rgba(10, 14, 39, 0.98));
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 16px;
+    padding: 0;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideUp 0.4s ease;
+    box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 2001;
+}
+
+.close-modal:hover {
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 50px;
+    color: var(--text-light);
+}
+
+/* ==================== Service Details Content ==================== */
+.service-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid rgba(0, 212, 255, 0.2);
+}
+
+.service-header-icon {
+    font-size: 64px;
+    min-width: 100px;
+}
+
+.service-header-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #00d4ff, #0066cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.service-header-content p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* ==================== 3D Product Gallery ==================== */
+.product-gallery {
+    margin: 40px 0;
+}
+
+.gallery-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.product-card {
+    background: rgba(0, 212, 255, 0.05);
+    border: 2px solid rgba(0, 212, 255, 0.2);
+    border-radius: 12px;
+    padding: 25px;
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.product-card:hover::before {
+    left: 100%;
+}
+
+.product-card:hover {
+    background: rgba(0, 212, 255, 0.15);
+    border-color: var(--secondary-color);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+}
+
+.product-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.product-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+.product-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.product-specs {
+    list-style: none;
+    padding: 0;
+}
+
+.product-specs li {
+    padding: 6px 0;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.product-specs li::before {
+    content: '▸ ';
+    margin-right: 8px;
+}
+
+/* ==================== Service Features ==================== */
+.service-features {
+    background: rgba(0, 212, 255, 0.08);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 40px 0;
+}
+
+.features-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: var(--secondary-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature-item {
+    padding: 20px;
+    background: rgba(26, 31, 58, 0.5);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.feature-item:hover {
+    border-left-color: var(--secondary-color);
+    background: rgba(26, 31, 58, 0.8);
+    transform: translateX(5px);
+}
+
+.feature-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.feature-item h4 {
+    color: var(--text-light);
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.feature-item p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* ==================== Service Pricing ==================== */
+.service-pricing {
+    margin: 40px 0;
+}
+
+.pricing-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: var(--secondary-color);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.pricing-card {
+    background: rgba(0, 212, 255, 0.08);
+    border: 2px solid rgba(0, 212, 255, 0.2);
+    border-radius: 12px;
+    padding: 30px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.pricing-card.featured {
+    border-color: var(--secondary-color);
+    background: rgba(0, 212, 255, 0.15);
+    transform: scale(1.05);
+}
+
+.pricing-card:hover {
+    border-color: var(--secondary-color);
+    background: rgba(0, 212, 255, 0.12);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+}
+
+.price-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.pricing-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+.price-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.price-duration {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.pricing-features li {
+    padding: 10px 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.pricing-features li:last-child {
+    border-bottom: none;
+}
+
+.pricing-features li::before {
+    content: '✓ ';
+    color: var(--success);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.pricing-btn {
+    width: 100%;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.pricing-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+}
+
+/* ==================== Service Specs Table ==================== */
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: rgba(0, 212, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.specs-table thead {
+    background: rgba(0, 102, 204, 0.2);
+}
+
+.specs-table th {
+    padding: 15px;
+    text-align: left;
+    color: var(--secondary-color);
+    font-weight: 600;
+    border-bottom: 2px solid rgba(0, 212, 255, 0.2);
+}
+
+.specs-table td {
+    padding: 15px;
+    color: var(--text-muted);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.specs-table tr:hover {
+    background: rgba(0, 212, 255, 0.08);
+}
+
+/* ==================== Click Indicator ==================== */
+.click-indicator {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    margin-top: 10px;
+    font-weight: 600;
+    opacity: 0.8;
+    animation: pulse-text 2s infinite;
+}
+
+@keyframes pulse-text {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        max-height: 95vh;
+    }
+
+    .modal-body {
+        padding: 30px 20px;
+    }
+
+    .service-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .service-header-icon {
+        min-width: 100%;
+    }
+
+    .service-header-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .products-grid,
+    .features-grid,
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-card.featured {
+        transform: scale(1);
+    }
+
+    .price-amount {
+        font-size: 2rem;
+    }
+
+    .close-modal {
+        font-size: 24px;
+        right: 15px;
+        top: 15px;
+    }
+}
