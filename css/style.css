@@ -966,3 +966,75 @@ footer {
         text-align: center;
     }
 }
+
+/* ==================== Mobile Improvements ==================== */
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        width: 95%;
+        padding: 0 15px;
+    }
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .logo span {
+        font-size: 1.2rem;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 100px 0 50px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem !important;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .stat {
+        padding: 1rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .solution-card,
+    .service-card,
+    .why-card,
+    .info-card {
+        padding: 1.5rem;
+    }
+
+    .terminal-window {
+        overflow-x: auto;
+    }
+
+    .terminal-content {
+        font-size: 12px;
+    }
+
+    .about-canvas {
+        height: 250px;
+    }
+
+    canvas {
+        max-width: 100%;
+        height: auto;
+    }
+}
